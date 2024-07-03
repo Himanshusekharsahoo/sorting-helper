@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      background: url('https://wallpaperaccess.com/full/51781.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+        .container {
+      background: rgba(255, 255, 255, 0.1); 
+      height: 500px; 
+      width: 500px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .forgot-password,
+    .create-account {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center mt-5">Login Form</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="saveLogin">
+          <label class="form-check-label" for="saveLogin">Save login information</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Log In</button>
+      </form>
+      <div class="text-center mt-3">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+      <div class="text-center mt-3">
+        <p>Don't have an account? <a href="#" class="create-account">Create account</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const saveLogin = document.getElementById('saveLogin').checked;
+
+    console.log('Email:', email);
+    console.log('Password:', password);
+    console.log('Save login information:', saveLogin);
+
+    
+    window.location.href = 'file:///C:/Users/HP/OneDrive/Desktop/Study%20Material/PROJECT/SELF/responsive-travel-website-mai2/responsive-travel-website-main/index.html';
+});
+
+document.querySelector('.forgot-password').addEventListener('click', function(event) {
+  
+    event.preventDefault();
+    
+    window.open('fforgotpassword.html', '_blank'); 
+});
+
+document.querySelector('.create-account').addEventListener('click', function(event) {
+  
+    event.preventDefault();
+    
+    window.open('CreateAccount.html', '_blank'); 
+});
+
+
+</script>
+
+</body>
+</html>

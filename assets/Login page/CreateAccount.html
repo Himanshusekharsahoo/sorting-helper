@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://wallpapercave.com/wp/wp5813847.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(px);
+      max-width: 400px; /* Adjust the maximum width */
+      width: 100%;
+      padding: 20px;
+    }
+
+    .login-link {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="text-center">Create Account</h2>
+  <form id="createAccountForm">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-3">Create Account</button>
+  </form>
+  <div class="text-center mt-3">
+    <p>Already have an account? <a href="#" class="login-link">Log In</a></p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+document.getElementById('createAccountForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Handle create account logic here
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+      alert('Password and confirm password do not match');
+      return;
+    }
+
+    console.log('Full Name:', fullName);
+    console.log('Email:', email);
+    console.log('Password:', password);
+    window.location.href = 'Submit page.html' ;
+  });
+  document.querySelector('.login-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'LogIn form.html';
+  });
+</script>
+
+</body>
+</html>
